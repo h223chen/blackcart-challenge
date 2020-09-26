@@ -1,6 +1,7 @@
 ### Installation
 
 `npm install`
+note: i've run into issues with npm throwing some stack overflow error on first run ... just run it again and it should work
 
 ### Run API
 
