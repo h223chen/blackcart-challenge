@@ -5,11 +5,10 @@
 ### Run API
 
 ```
-npm run watch
+npm start
 curl localhost:3000/stores/{storeId}/products
 ```
 
 ### Run Tests
 
 `npm test`
-

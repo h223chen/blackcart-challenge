@@ -10,24 +10,6 @@ class BlackCart {
     this.woocommerce = new WooCommerce();
   }
 
-  __validate(results) {
-    var valid = true;
-    results.forEach((result) => {
-      valid = !!(valid && result.id && result.name && result.inventory != null);
-
-      result.variations.forEach((variation) => {
-        valid = !!(
-          valid &&
-          variation.inventory &&
-          variation.weight &&
-          variation.price
-        );
-      });
-    });
-
-    return valid;
-  }
-
   getProducts(storeId) {
     let store = this.__stores[storeId];
     let result;
@@ -43,7 +25,7 @@ class BlackCart {
         return null;
     }
 
-    console.log(this.__validate(result));
+    console.log(result);
     return result;
   }
 }
