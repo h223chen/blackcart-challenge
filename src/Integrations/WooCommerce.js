@@ -1,10 +1,20 @@
 const BaseIntegration = require("./BaseIntegration");
 
+/**
+ * WooCommerce integration class
+ *
+ * Communicates with WooCommerce API and returns WooCommerce data
+ * ASSUMPTIONS: not going to worry about stuff like authentication
+ * and API keys
+ */
 class WooCommerce extends BaseIntegration {
   constructor() {
     super();
   }
 
+  /**
+   * fake product return values from WooCommerce docs
+   */
   __getFakeProducts() {
     return [
       {
@@ -461,7 +471,9 @@ class WooCommerce extends BaseIntegration {
       },
     ];
   }
-
+  /**
+   * fake settings return values from WooCommerce docs
+   */
   __getFakeSettings() {
     return {
       environment: {
@@ -609,7 +621,9 @@ class WooCommerce extends BaseIntegration {
       ],
     };
   }
-
+  /**
+   * fake country settings return values from WooCommerce docs
+   */
   __getFakeCountrySettings() {
     return {
       code: "BE",
@@ -625,14 +639,24 @@ class WooCommerce extends BaseIntegration {
     };
   }
 
+  /**
+   * get current currency settings
+   */
   __getFakeCurrencySetting() {
     return this.__getFakeSettings().settings.currency;
   }
 
+  /**
+   * get current weight unit settings
+   */
   __getFakeWeightSetting() {
     return this.__getFakeCountrySettings().weight_unit;
   }
 
+  /**
+   * @override
+   * @param {Array} products
+   */
   __normalize(products) {
     return products.map((product) => {
       let p = {
@@ -667,8 +691,9 @@ class WooCommerce extends BaseIntegration {
     });
   }
   /**
+   * @override
    * faking the return value, you'd just call the products
-   * endpoint for WooCommerce for prod
+   * endpoint for WooCommerce
    */
   getProducts() {
     return this.__normalize(this.__getFakeProducts());

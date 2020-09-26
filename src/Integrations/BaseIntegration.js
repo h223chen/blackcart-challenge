@@ -5,7 +5,8 @@
 class BaseIntegration {
   constructor() {}
 
-  getProducts() {}
+  __normalize() {} // reformat data to BlackCart format
+  getProducts() {} // return product information from this integrations product endpoint
 }
 
 module.exports = BaseIntegration;

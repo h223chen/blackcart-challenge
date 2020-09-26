@@ -13,6 +13,7 @@ let blackcart = new BlackCart();
 
 router.get(routes.products, (req, res) => {
   let storeId = req.params.storeId;
+
   if (storeId && stores[storeId]) {
     let products = blackcart.getProducts(storeId);
     res.send(products);

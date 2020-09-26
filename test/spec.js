@@ -1,6 +1,13 @@
 var request = require("supertest");
-
-describe("loading express", function () {
+/**
+ * a small basic test suite
+ *
+ * Of course, if this was a production product, testing would need to
+ * be way more rigorous. At the very least I would include testing around
+ * custom test data for each integration, and see if the normalized data
+ * is in the correct format, has the right fields, and contains the right values
+ */
+describe("basic test suite", function () {
   var server;
   beforeEach(function () {
     server = require("../start");

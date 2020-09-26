@@ -5,6 +5,9 @@ class Shopify extends BaseIntegration {
     super();
   }
 
+  /**
+   * fake product return values from Shopify docs
+   */
   __getFakeProducts() {
     return {
       products: [
@@ -297,6 +300,10 @@ class Shopify extends BaseIntegration {
     };
   }
 
+  /**
+   * @override
+   * @param {Array} products
+   */
   __normalize(products) {
     return products.map((product) => {
       let lowestPrice = null;
@@ -339,6 +346,11 @@ class Shopify extends BaseIntegration {
     });
   }
 
+  /**
+   * @override
+   * faking the return value, you'd just call the products
+   * endpoint for Shopify
+   */
   getProducts() {
     return this.__normalize(this.__getFakeProducts().products);
   }
