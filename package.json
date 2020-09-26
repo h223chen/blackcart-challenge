@@ -1,0 +1,31 @@
+{
+  "name": "blackcart-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "watch": "nodemon ./start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h223chen/blackcart-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/h223chen/blackcart-challenge/issues"
+  },
+  "homepage": "https://github.com/h223chen/blackcart-challenge#readme",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "mocha": "^8.1.3",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.2",
+    "supertest": "^5.0.0"
+  }
+}
